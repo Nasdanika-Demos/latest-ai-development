@@ -1,0 +1,7 @@
+type: Agent
+features:
+  container:
+    other: 
+      agents:
+        path: 2
+        comparator: down-right

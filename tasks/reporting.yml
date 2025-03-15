@@ -1,0 +1,7 @@
+type: Task
+features:
+  container:
+    other: 
+      tasks:
+        path: 2
+        comparator: down-right

@@ -1,0 +1,7 @@
+type: Tool
+features:
+  container:
+    other: 
+      tools:
+        path: 2
+        comparator: down-right

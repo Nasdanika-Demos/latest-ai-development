@@ -1,0 +1,10 @@
+Action:
+    icon: https://docs.nasdanika.org/images/nasdanika-logo.png
+    text: Nasdanika Demos
+    location: https://github.com/Nasdanika-Demos
+    navigation:
+      - Action:
+          text: Source
+          icon: fab fa-github
+          location: https://github.com/Nasdanika-Demos/semantic-mapping  
+          

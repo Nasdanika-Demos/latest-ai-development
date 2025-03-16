@@ -1,6 +1,6 @@
 [
     {
-        "identifiers": ["uuid:7833c44b-d5b0-4aeb-a669-7f58c820b78e"],
+        "identifiers": ["uuid:79326891-0aa5-407e-aed8-6a1f9fbcf7b8"],
         "name": "Nasdanika Demos",
         "icon": "https://docs.nasdanika.org/images/nasdanika-logo.png",
         "location": "https://github.com/Nasdanika-Demos",
@@ -10,7 +10,7 @@
         }
     },
     {
-        "identifiers": ["uuid:d991dc5e-c8b4-4598-81be-c3a2b2ff68b5"],
+        "identifiers": ["uuid:e1261b13-d986-40fd-9ea6-40d1145b18c7"],
         "name": "Latest AI Development",
         "icon": "https://crew-ai.models.nasdanika.org/images/navy.svg",
         "location": "index.html",
@@ -22,9 +22,9 @@
     {
         "container": {
             "reference": "children",
-            "identifiers": ["uuid:b67e3a9f-3ad7-4267-89d9-dde00e296583"]
+            "identifiers": ["uuid:bc03f5f9-ab8a-4367-bfd3-170150c802a2"]
         },
-        "identifiers": ["uuid:98e49698-2b1a-44b8-9871-2a0f970886f0"],
+        "identifiers": ["uuid:7c44fa38-6647-4a41-a3c1-d258efc14cdc"],
         "name": "Agents",
         "icon": "https://crew-ai.models.nasdanika.org/images/software-agent.svg",
         "location": "agents.html",
@@ -36,10 +36,38 @@
     {
         "container": {
             "reference": "agents",
-            "identifiers": ["uuid:d991dc5e-c8b4-4598-81be-c3a2b2ff68b5"],
+            "identifiers": ["uuid:e1261b13-d986-40fd-9ea6-40d1145b18c7"],
             "name": "Latest AI Development"
         },
-        "identifiers": ["uuid:42c4ef39-b8e5-4113-8f2c-99200580ba59"],
+        "identifiers": ["uuid:eca4b842-c1cf-4f6c-9313-396b33a04922"],
+        "name": "Reporting Analyst",
+        "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAADZElEQVR4Xp2Ua0wTWRiGuz+QQjTGIMqqu3iJBtF1lUotIoqSeEFRwAteaAEvZLsCa9hVfwiERBGMiYJGAiRiJIqApULXUjQaqbsKitYYkLB0lSYgM2V6Qal0aJXX6VSrncaIvsnz53znPPm+MyfD440itDxuDsD7gbv+XYEmxd+u2j5iPRMVwa19U2oeYXyu0hLwy/r8CVJJQnqQUOK3tcY0PvlCN5+794uhKIwjjPbsJq1N+5viLSRyG4S7yzAnOhsz1mRhc6UZcZcN9KZL1E7uWY/ozbZfCZNNpyOtKLprRWxhOyIPKhCReQ1hf8ggTK/G4rQqRJc8x8aLejVPkOrFdbjSZ0YgYbZTPdQw8osVWHlYhYi0ShzNFCMrKQ7+wduwMyEBpRkxmBlzFFEFLSMTgjaXcT2ukGZ7Xa/BhheEFbmFclYYW/gMUfHpWLY6BT+GJGNuuAQr1yRCmFnnEMIvaMtFroeNfoCexchGXhA0OnuG0NzWj5x6CsnXnHcYffIxwpmxV+U1Y8uVAeYOjfhdRqBNSw31mWypANyfU4+BTusmafzHyNq6LXjc9RpVDy1IqXMKY4u1WCg+h3VFHS5hxSMLmKnw0mhD4wOq5ar65WqXUEfSZ7t6h9DOyDSMrKVjADc1ZlTdN+PcLSO259Rjfnw+oqRlUHUM4Z/nNLpIGwiTHXeeGFGrJj5AlrDCrt435c90jEzrlNW2vma6e4ckuR3i2mHsklmxo+YNEqoH2Q7jK02IvWTAmduGz2RO5Hf61vIY2ckn/w9C2Uwicn8DBHuVmC5pxHSxCoEsDfg5sQE/JSpZpu26zvA3gpMUCN2jwL6CZpdQpu4r4mm0r8QPO1+holEH/oryb2a5tOHzsUsZ4aD/vTbzsKqlHz6Rnge+xraspk8jN5EZ7D02aYznb7RSmBpzmdl03g3f5SWYKjoAv/BjHjUHGadbPwot9bf0k1nhjafkpOv39T0hSVfhHVHsxtiwfAQs2IGJIVKPmoPjFe3O7tTEftfTcUSm7p+9ZHdVp/fSU+DCX5wDb1GBx7qDcmX3O+ZjHHGTfYyPKPfEGFEeRgs/7DidV/bvOq6HzRRBqm9AqNTiJczGaBmz6E/wAzdkcV2uzFi0J9BH8NcSr5BDotHgOy85lCcQuP3G3gOa6sV1LUtSgwAAAABJRU5ErkJggg==",
+        "location": "references/agents/reporting-analyst/index.html",
+        "type": {
+            "name": "Agent",
+            "ns-uri": "ecore://nasdanika.org/models/crew-ai"
+        }
+    },
+    {
+        "container": {
+            "reference": "decorator",
+            "identifiers": ["uuid:87853b4b-2455-46fb-8e27-5aa8c3f268c9"]
+        },
+        "identifiers": ["uuid:06d51ac4-233e-4af8-8f6d-1ef812080b18"],
+        "icon": "far fa-question-circle",
+        "description": "Think of an agent as a specialized team member with specific skills, expertise, and responsibilities",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://app.models.nasdanika.org"
+        }
+    },
+    {
+        "container": {
+            "reference": "agents",
+            "identifiers": ["uuid:e1261b13-d986-40fd-9ea6-40d1145b18c7"],
+            "name": "Latest AI Development"
+        },
+        "identifiers": ["uuid:403ea6f1-7caa-4b70-b2e0-529eb43da3ff"],
         "name": "Researcher",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAADZElEQVR4Xp2Ua0wTWRiGuz+QQjTGIMqqu3iJBtF1lUotIoqSeEFRwAteaAEvZLsCa9hVfwiERBGMiYJGAiRiJIqApULXUjQaqbsKitYYkLB0lSYgM2V6Qal0aJXX6VSrncaIvsnz53znPPm+MyfD440itDxuDsD7gbv+XYEmxd+u2j5iPRMVwa19U2oeYXyu0hLwy/r8CVJJQnqQUOK3tcY0PvlCN5+794uhKIwjjPbsJq1N+5viLSRyG4S7yzAnOhsz1mRhc6UZcZcN9KZL1E7uWY/ozbZfCZNNpyOtKLprRWxhOyIPKhCReQ1hf8ggTK/G4rQqRJc8x8aLejVPkOrFdbjSZ0YgYbZTPdQw8osVWHlYhYi0ShzNFCMrKQ7+wduwMyEBpRkxmBlzFFEFLSMTgjaXcT2ukGZ7Xa/BhheEFbmFclYYW/gMUfHpWLY6BT+GJGNuuAQr1yRCmFnnEMIvaMtFroeNfoCexchGXhA0OnuG0NzWj5x6CsnXnHcYffIxwpmxV+U1Y8uVAeYOjfhdRqBNSw31mWypANyfU4+BTusmafzHyNq6LXjc9RpVDy1IqXMKY4u1WCg+h3VFHS5hxSMLmKnw0mhD4wOq5ar65WqXUEfSZ7t6h9DOyDSMrKVjADc1ZlTdN+PcLSO259Rjfnw+oqRlUHUM4Z/nNLpIGwiTHXeeGFGrJj5AlrDCrt435c90jEzrlNW2vma6e4ckuR3i2mHsklmxo+YNEqoH2Q7jK02IvWTAmduGz2RO5Hf61vIY2ckn/w9C2Uwicn8DBHuVmC5pxHSxCoEsDfg5sQE/JSpZpu26zvA3gpMUCN2jwL6CZpdQpu4r4mm0r8QPO1+holEH/oryb2a5tOHzsUsZ4aD/vTbzsKqlHz6Rnge+xraspk8jN5EZ7D02aYznb7RSmBpzmdl03g3f5SWYKjoAv/BjHjUHGadbPwot9bf0k1nhjafkpOv39T0hSVfhHVHsxtiwfAQs2IGJIVKPmoPjFe3O7tTEftfTcUSm7p+9ZHdVp/fSU+DCX5wDb1GBx7qDcmX3O+ZjHHGTfYyPKPfEGFEeRgs/7DidV/bvOq6HzRRBqm9AqNTiJczGaBmz6E/wAzdkcV2uzFi0J9BH8NcSr5BDotHgOy85lCcQuP3G3gOa6sV1LUtSgwAAAABJRU5ErkJggg==",
         "location": "references/agents/researcher/index.html",
@@ -51,9 +79,9 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:2ef65bbe-66a3-4066-9094-d2a63e5ef56e"]
+            "identifiers": ["uuid:8604d0c1-1ed1-402f-8f6c-194fef922769"]
         },
-        "identifiers": ["uuid:ffcd0436-9267-416a-94ed-8216a83a9b7c"],
+        "identifiers": ["uuid:129d8ccc-56be-4ed1-ac0b-73f4ad91fc61"],
         "icon": "far fa-question-circle",
         "description": "Think of an agent as a specialized team member with specific skills, expertise, and responsibilities",
         "type": {
@@ -64,9 +92,9 @@
     {
         "container": {
             "reference": "children",
-            "identifiers": ["uuid:b67e3a9f-3ad7-4267-89d9-dde00e296583"]
+            "identifiers": ["uuid:bc03f5f9-ab8a-4367-bfd3-170150c802a2"]
         },
-        "identifiers": ["uuid:8293f43c-7a9d-43a1-b55a-24371e28021f"],
+        "identifiers": ["uuid:df036181-9375-4f97-a48f-82182683e02d"],
         "name": "Tasks",
         "icon": "https://crew-ai.models.nasdanika.org/images/project-management.svg",
         "location": "tasks.html",
@@ -78,10 +106,10 @@
     {
         "container": {
             "reference": "tasks",
-            "identifiers": ["uuid:d991dc5e-c8b4-4598-81be-c3a2b2ff68b5"],
+            "identifiers": ["uuid:e1261b13-d986-40fd-9ea6-40d1145b18c7"],
             "name": "Latest AI Development"
         },
-        "identifiers": ["uuid:587ff98f-1ba8-48fa-a5ca-0f217d24334f"],
+        "identifiers": ["uuid:88e884d8-730c-4a7c-908f-205a32380d7d"],
         "name": "Research",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACk0lEQVR4XqWTX0hTURzH70uIj9kQosJKxXJCpuhSEQnSSktX4vy/zTVzGiZJBaMWaKi0rKFOq5mYmZGlksZMapmsVmGlZWRJNdc2sz9GD4VJXfh2z30YzNu1Kz184P7OPedzf+ec76V8fXwN4mAxLQ4R438IXhNM+yzxMVBEFh8ejdj1G5CWlIbI0ADkSHMQFh6KxPhEFOcXC0IpU2JtQCBNETuRxQSuQ/LmZEjCliNjRwbEkSFI2JTAWciHUlaAoNVBoPxF/ohmOiRINkpwqFTrqRdDRFgE/JYuA5WRJcfISyfLs1dTcM/8Zp5dnjGh2J46kbpLDkqh0mDqK+3FwOAwIqNiYLGOYsvWFPYjWl0VchWFMJ5rR3aeCncfjHmteeumkZmj+buQQMYvXunDipWr0H1jEKbWTkjTs1BRfRopqemc+f8UVunrUXPSiI5r/aitM+FYpZ7t8HxbF3QVJ9A3cH9h4bh9BmbLI9ievGbrxy8cbC2E4ed2rlBeoMGR4y2IjkuG89McrvdbUc10yIfecBYGYwtL700rV5in2IueW5NI2qmC4+NPtLR3o2hfOS91Ta0Lb9l8+yF7k6fqmznnKQSOsNF0iTl0DfYUlbExIbdK3gmhqbmDFdbWd054hPnMGdrGaEizyuCYnkXb5V7sL9fyYjS1czrUVZ5xeYSlB7TYnVkMSVwiXF9+wf7hB3vzfLxzf+cIvbY88f4bLPdGMTw2ydbkNyS1EEbGXVyhQlWCg0cbERW7Dc7Pc+gxD6Fa38ALCX1NbSNLV98drjBPUQTz0DS2SwuZ2Myi+cJVKNUlvMxPg0eYK1fTZIAEufywjgltg9dEobxx0UiXqWlKJBIZiHR+FBaLLFtN+/mJDH8A8aZGAjyJmOsAAAAASUVORK5CYII=",
         "location": "references/tasks/research-task/index.html",
@@ -93,9 +121,37 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:1d5b5dbe-fe70-4731-a220-49965b977b54"]
+            "identifiers": ["uuid:2db0d926-3963-40b0-8f28-aabde3ea713b"]
         },
-        "identifiers": ["uuid:382df52c-8619-4274-befe-a8196a652e8a"],
+        "identifiers": ["uuid:f137bb87-e288-4369-8504-a753c3c2b886"],
+        "icon": "far fa-question-circle",
+        "description": "A specific assignment completed by an Agent",
+        "type": {
+            "name": "Link",
+            "ns-uri": "ecore://app.models.nasdanika.org"
+        }
+    },
+    {
+        "container": {
+            "reference": "tasks",
+            "identifiers": ["uuid:e1261b13-d986-40fd-9ea6-40d1145b18c7"],
+            "name": "Latest AI Development"
+        },
+        "identifiers": ["uuid:5e0cc38a-ac1a-4309-8dd6-65ef993cab2e"],
+        "name": "Reporting",
+        "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAUCAYAAABvVQZ0AAACr0lEQVR4XqWUS0hUYRTHtZYtKogWUbQp6Cl6Z8ZCDct8pNhDanqglumd+78zPsZ8PyYzHQrtofTELColy1IsJlA3Ri2KHtAmrEXQskWbFrox6Ot/Rm7pMDpFBw53vo/z/e7/+59zJyoqTMSY5vK4wpIVkdJmGItDz84KzWVm2IBzdsM8ESltLvTFFhQsCWX8DsJyNd2zPq0Wr49fwZSVB9sw5XC5UmfW8qXmFl1fOXNvVliw9Hq8xw0oK3MvQonqmbVzwsSnmPz8RZk+fN5Rhcf0Y5nD41llN81NAqGqjVHNzQukNhZYK8+wMDFz/xl8z+/EZMMgVE0/VF4HJrNP4SMhCfSnhPB08YfPYzYDH+aESVfEl8KrUGV3ocxuKG8PVI7fGNd09zYa7Q0mgQQ3Umn2nLCd1XhW2QdVdR+q69106tehqh/gZ3IFLgSLeEWCajQgjzaMJpWjMywssxFf5Gr1A39gRheUbwgqpQaDArAZZnewOUWeNZ5bUM42vA0L2+x2Ly26hin6pJqeQNU+nIYdOItP0ghesdXuMg9LR7dXYmxeWFxR8eoj5/HDfRNKrltxD0oO7G3BV/GpvBcqoRRjvLbKOhkBFgQCdpmvfa34llaHV1xvkBGwA2nNAajEsn+AWUF/DAFbaypzp9YhYDPRn1KNQLwH/WxKgEofaYbhnx9GkzlbsXtOm28OtRvjkrt8aOdeMsHrNN1MkeTaEVkZYZz6ePHP6iy9G2ETmkQ1r52V5IWPe0MJZeiMCKMCLdGL5xkNxoDk1mJcImg3lZRy+p+yy8GxyfFD2Q0MyhcUygkGQUkyUyxqD0161OMAWi+/nFbc8UJgZiPr7zidzoWhLCuiwyVhbVR32z+MCYGxyxPyYmbLrNN/GdFUrtO3Uf5FDVPlCH8flf3Qwv+OX3aGnke5hbRQAAAAAElFTkSuQmCC",
+        "location": "references/tasks/reporting-task/index.html",
+        "type": {
+            "name": "Task",
+            "ns-uri": "ecore://nasdanika.org/models/crew-ai"
+        }
+    },
+    {
+        "container": {
+            "reference": "decorator",
+            "identifiers": ["uuid:dbd9b826-9cbe-43e8-b978-b6a24b31173e"]
+        },
+        "identifiers": ["uuid:482cf26a-b3cb-4354-943b-18888c9ccfe3"],
         "icon": "far fa-question-circle",
         "description": "A specific assignment completed by an Agent",
         "type": {
@@ -106,9 +162,9 @@
     {
         "container": {
             "reference": "children",
-            "identifiers": ["uuid:b67e3a9f-3ad7-4267-89d9-dde00e296583"]
+            "identifiers": ["uuid:bc03f5f9-ab8a-4367-bfd3-170150c802a2"]
         },
-        "identifiers": ["uuid:12c5eb23-057b-4092-b2bb-5d9c75e73a11"],
+        "identifiers": ["uuid:a0baf85d-ae1c-49dc-b884-d04fbebab12e"],
         "name": "Tools",
         "icon": "https://crew-ai.models.nasdanika.org/images/toolbox.svg",
         "location": "tools.html",
@@ -120,10 +176,10 @@
     {
         "container": {
             "reference": "tools",
-            "identifiers": ["uuid:d991dc5e-c8b4-4598-81be-c3a2b2ff68b5"],
+            "identifiers": ["uuid:e1261b13-d986-40fd-9ea6-40d1145b18c7"],
             "name": "Latest AI Development"
         },
-        "identifiers": ["uuid:9c7f998e-86bc-455d-9dbf-85752ecb1113"],
+        "identifiers": ["uuid:62c17e84-fee3-4120-b5d9-15158cdb058b"],
         "name": "Serper",
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAC6klEQVR4Xo2VTUwTURDHt25LQmxpU9oGjGdQYiRSpGDKblsggRbtF3Lw4F1Fg1QPRhNUVPRiSPmQeNDEj4gXgVbUBBNAQKBQIERjbPDjbkSKTQxqMs6s2aUsa+M/mWbfzsxv570375VhGGanyWR6y7JsGJ+NzP+pKCcnJ8LxjpRarf6K4zzJQ7AXwy/hYd9jsFpLyWmTnMoqOmC3r76emQV/IPgTx/5NXqysk2ALS28gOvQc8FXHpgCZDAZDdGYuDsdONFFso8y9g35yqTKCEdTr89NXg7JAUSpXVVUq8eETXLzcRkB3mq9BrdF8EQflaB0Em51fhEM+37+gLO90rROQppyVlTWF7zxoRxoON/6q5LikPCEoQr1boSwC7nXf6gUCkk3F5uBS2xVoOnkKJqdjoNPp+tPiJSlBJdjYxCQcx/UToSLYVlHxDeN2yViSJOjV9hufs7OzH4gwnBaMT05BZ3cP8A7HD4fTuYYtNMBkgIkKXkOYzx8AATZOMF6Ahbu6af3uYAwrT8okVqkygmk0mmH0b5MnZNLGmgmVbcDKa/Oh0Gqgtd0rT1KSipFtQPo0CdYesUExl/sb40JoXlm+pN14AiIuV1WKdzrXlaZZXvcXdj1qgwv3S+Do+QIorTZTpYEtMI7nV2PxeXiXWBaMWoFaI33NaJpUGcGabu6Bc3f3Qftg2VYoXg6D1B7Np1tApVINkDW3hARouKtH3E3agGK0EFVGsIISvTLU7fGkRsbGQavVPhE/gs/9I68mhD5jNreG14rJBJFD6T1DZ9tTf/D7KCZrtTpqTkF4hAZHcXcdTtdaGkxUQA5t7bPC/po8MJnNCcZisQzEF5eg5cxZwMsyivY0hM/Ts3HQ6/WKZ5NJg7Y+skJZTT50hDuB4/h1chZWV9esEPT98kfBYvEFsNsrV8gnA6VLgBKsp/c2RIaewXadLiI6C00mS7/bU5+srXMnjUYjrWcmmCi32WxJ0JVGfwk4tvwBUNPNSh4I2+MAAAAASUVORK5CYII=",
         "location": "references/tools/serper/index.html",
@@ -135,37 +191,9 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:c8409918-c8a9-460c-8aa3-883d97694d5f"]
+            "identifiers": ["uuid:ecf49b91-e571-454b-b1f3-f08ec77a325e"]
         },
-        "identifiers": ["uuid:7ee199a6-eb72-4d9f-a0b0-fa20ff274d76"],
-        "icon": "far fa-question-circle",
-        "description": "A skill or function that agents can utilize to perform various actions",
-        "type": {
-            "name": "Link",
-            "ns-uri": "ecore://app.models.nasdanika.org"
-        }
-    },
-    {
-        "container": {
-            "reference": "tools",
-            "identifiers": ["uuid:d991dc5e-c8b4-4598-81be-c3a2b2ff68b5"],
-            "name": "Latest AI Development"
-        },
-        "identifiers": ["uuid:acb7dbd3-18ab-4669-93a4-99155a71771e"],
-        "name": "Test Tool",
-        "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAADmElEQVR4XpWVaUxTWxDHr5fTa1PpXtFnFXApUCuxiNZQQCS0FWpd69ZiUPPie4oPDE9qKaAoKkEt0RgQrbFRo8Y9JsYPGj9o6hJNVNQEWTR5MS58In4QjJp23plri1hq1H8y6e3cM7/MnJlzD8P8XApqf1I7Tk0Z9e6XpWJZtm5O3oQOzwZjqHVXIVw8bIcEhQjy9QmdhLDb6ZqR0UExJRYTo3Ohrrfz1jqAV9UQ+s8NoZf/QvBlBXhr8qGlLBO6j82FlQVJ7+nykuj47yTkiOdFoLQHQX3t5dC6PRcWm8a9SdfInqwoSgrK48mb1vWToe/yfIDry8G/yQAijmyL5kRU7Ntt5bO6c345aMdL71JfLrVh1NKo2cLP2Vq1KHDbm/sVWmkA6ls1iMNL6Vig60XY3UvFIBNzR6mPRF5KCFcvJdyuQevjpKI43+2m2Ty0xJSM5X/bU5ZltnTc/Bs+dm8GnUaJmSEsk7DsPvrrKk/UfKhITulnGcZNfU3UZ0CoVh0f6LuyBF7QPaWNqh8A5s1MbG/ZOQd8jVZMfxb6aKD3yrQceJRlhi+WJfDZYoc2oxmuUp+AZfeHQ42t5Zl8lkUz/uiK8GQSuSJk2+gFuXTEO+brPqEqH2aZ4ES6IaQScGcUAu60f8qM0BOjBWimVZHgxTljXyGwxjkZk1Gh73hJ4wXY+wAgo9AZpP9tEkLqy5M0fZiZihOejQTLBdypT2Y7VCSl9NM9baCuVF2y9DECD2+cjsC1uG7NIlczDxyTkvEUFw0GakWS5h8AsUk2R35iEIGX6rIRiKeJkeWXuEMInGpa9paJKrnHUNCjjBOcVMQJTvtT9UNKjpcKX3v/0oNSLhwomdEYzO0IXFpzJEZTTPApx8pbW9bQpji2FQFaWlbyQFPo2LBbKs93QEPgI4warxsyNmWJk2KOzegJqsCBZ26ov1GKY4Pne0DKdIujdw/Nssx/D0RihT8M5RVrsIXi4T7XmVVwqLsGpi/QfT/YYTltHh/fnH8oNJxp5OjhsUsNP2ePnqgKuM4irBYcDRbcptgfCZYT1lqrjkDjfaDl94PdcwhEEtlbw7wpQXVqQtu0Qu3r4h1WwDIPdnmg9tbqd0RIqqM50SpOMzt7S891gs3VAvYqE59JxJq73FB9bTXo52neE0IKooN/JCXtVJ06Y/bzEYr40Mr9Fli4dRbkrdXDpGx1J/s7H9gYwisABxavgZ9eAf8DLZiaAM8r12wAAAAASUVORK5CYII=",
-        "location": "references/tools/test-tool/index.html",
-        "type": {
-            "name": "Tool",
-            "ns-uri": "ecore://nasdanika.org/models/crew-ai"
-        }
-    },
-    {
-        "container": {
-            "reference": "decorator",
-            "identifiers": ["uuid:6b16db3b-46bd-4ae5-a01f-369406476f51"]
-        },
-        "identifiers": ["uuid:ce259c9a-1348-4032-b52a-3a9d25a600f5"],
+        "identifiers": ["uuid:c5a89933-62aa-4809-9490-690c9b6f605f"],
         "icon": "far fa-question-circle",
         "description": "A skill or function that agents can utilize to perform various actions",
         "type": {
@@ -176,9 +204,9 @@
     {
         "container": {
             "reference": "decorator",
-            "identifiers": ["uuid:b67e3a9f-3ad7-4267-89d9-dde00e296583"]
+            "identifiers": ["uuid:bc03f5f9-ab8a-4367-bfd3-170150c802a2"]
         },
-        "identifiers": ["uuid:bbd3e10a-9750-4b85-8b58-d1b631c3e2c5"],
+        "identifiers": ["uuid:363b1851-dca3-4de4-bdbf-b809734f9506"],
         "icon": "far fa-question-circle",
         "description": "A collaborative group of agents working together to complete a set of tasks",
         "type": {
@@ -189,12 +217,12 @@
     {
         "container": {
             "reference": "navigation",
-            "identifiers": ["uuid:7833c44b-d5b0-4aeb-a669-7f58c820b78e"]
+            "identifiers": ["uuid:79326891-0aa5-407e-aed8-6a1f9fbcf7b8"]
         },
-        "identifiers": ["uuid:aa8f413f-c6ff-4d3f-97cd-4be2abe5c8f3"],
+        "identifiers": ["uuid:d82b6149-4e01-4337-a0ba-a731f020320a"],
         "name": "Source",
         "icon": "fab fa-github",
-        "location": "https://github.com/Nasdanika-Demos/semantic-mapping",
+        "location": "https://github.com/Nasdanika-Demos/latest-ai-development",
         "type": {
             "name": "Action",
             "ns-uri": "ecore://app.models.nasdanika.org"

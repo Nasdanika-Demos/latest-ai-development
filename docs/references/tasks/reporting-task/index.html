@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="EN">
+  <head>
+    <title>Reporting</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/css/app.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/themes/default/style.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.1.0/github-markdown.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/js/dark-head.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jstree@3.3.11/dist/jstree.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.21.2/dist/bootstrap-vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/html-app@master/gen/web-resources/js/components/table.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<!--  Start search configuration -->
+<script src="../../../search-documents.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
+
+<script>
+// Script for full-text search of JsTree
+
+window.nsdJsTreeSearchCallback = function(str, node) { 
+    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
+    if (sf.search(node.text).isMatch) {
+		return true;
+	} 
+    let searchResult = this.search(str); 
+    for (const sr in searchResult) {
+        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
+            return true;
+        } 
+    } 
+    return false; 
+}.bind(lunr(function () {
+			  this.ref('id');
+			  this.field('title');
+			  this.field('content');
+
+			  for (const key in searchDocuments) {
+				  let doc = searchDocuments[key];
+				this.add({
+					id: doc['link-uuid'],
+					title: doc.title,
+					path: doc.path,
+					content: doc.content
+				});  
+			  }
+			}));
+</script>
+<!-- End search configuration  -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9BRJVLK8CC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9BRJVLK8CC');
+</script>    
+</head>
+  <body>
+    <div class="container nsd-app-container">
+      <div class="row">
+        <div class="col nsd-app-header">
+          <a href="https://github.com/Nasdanika-Demos" data-nsd-label-uuid="79326891-0aa5-407e-aed8-6a1f9fbcf7b8" class="nsd-app-header-title">
+            <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon"/>Nasdanika Demos</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-navbar">
+          <ul class="navbar navbar-light navbar-expand-lg">
+            <a href="../../../index.html" data-nsd-label-uuid="bc03f5f9-ab8a-4367-bfd3-170150c802a2" class="navbar-brand">
+              <img src="https://crew-ai.models.nasdanika.org/images/navy.svg" class="nsd-app-label-icon"/>Latest AI Development</a>
+            <button type="button" data-toggle="collapse" data-target="#nsd_g3" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="nsd_g3" class="collapse navbar-collapse"></div>
+          </ul>
+        </div>
+      </div>
+      <div class="row nsd-app-content-row">
+        <div class="col nsd-app-navigation-panel">
+          <input type="text" id="5ae9b536-e544-4aeb-baf9-3cbe62c1a364-navigation-panel_searchInput" title="Full-text search. You can use wildcards, e.g. 'foo*' or 'f*o'; title or content fields, e.g. 'title:foo* bar'; boosts, e.g. 'foo^10 bar'; fuzzy matches, e.g. 'foo~1'; and term presence, e.g. '+foo bar -baz'" class="form-control mt-1"/>
+          <div id="5ae9b536-e544-4aeb-baf9-3cbe62c1a364-navigation-panel"></div>
+          <script>$(document).ready( function() {
+$('#5ae9b536-e544-4aeb-baf9-3cbe62c1a364-navigation-panel').jstree(function(tree) { tree.state.filter = function(state) { delete state.core.selected; return state; };  tree.search.search_callback = function(searchStr, node) { if (typeof window.nsdJsTreeSearchCallback === 'function') return window.nsdJsTreeSearchCallback(searchStr, node); var sf = new $.vakata.search(searchStr, true, { caseSensitive : false, fuzzy : false }); return sf.search(node.text).isMatch; }; return tree; }({"core":{"data":[{"a_attr":{"onclick":"window.location='../../../agents.html';"},"children":[{"a_attr":{"onclick":"window.location='../../agents/reporting-analyst/index.html';"},"data-nsd-label-uuid":"87853b4b-2455-46fb-8e27-5aa8c3f268c9","icon":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAADZElEQVR4Xp2Ua0wTWRiGuz+QQjTGIMqqu3iJBtF1lUotIoqSeEFRwAteaAEvZLsCa9hVfwiERBGMiYJGAiRiJIqApULXUjQaqbsKitYYkLB0lSYgM2V6Qal0aJXX6VSrncaIvsnz53znPPm+MyfD440itDxuDsD7gbv+XYEmxd+u2j5iPRMVwa19U2oeYXyu0hLwy/r8CVJJQnqQUOK3tcY0PvlCN5+794uhKIwjjPbsJq1N+5viLSRyG4S7yzAnOhsz1mRhc6UZcZcN9KZL1E7uWY/ozbZfCZNNpyOtKLprRWxhOyIPKhCReQ1hf8ggTK/G4rQqRJc8x8aLejVPkOrFdbjSZ0YgYbZTPdQw8osVWHlYhYi0ShzNFCMrKQ7+wduwMyEBpRkxmBlzFFEFLSMTgjaXcT2ukGZ7Xa/BhheEFbmFclYYW/gMUfHpWLY6BT+GJGNuuAQr1yRCmFnnEMIvaMtFroeNfoCexchGXhA0OnuG0NzWj5x6CsnXnHcYffIxwpmxV+U1Y8uVAeYOjfhdRqBNSw31mWypANyfU4+BTusmafzHyNq6LXjc9RpVDy1IqXMKY4u1WCg+h3VFHS5hxSMLmKnw0mhD4wOq5ar65WqXUEfSZ7t6h9DOyDSMrKVjADc1ZlTdN+PcLSO259Rjfnw+oqRlUHUM4Z/nNLpIGwiTHXeeGFGrJj5AlrDCrt435c90jEzrlNW2vma6e4ckuR3i2mHsklmxo+YNEqoH2Q7jK02IvWTAmduGz2RO5Hf61vIY2ckn/w9C2Uwicn8DBHuVmC5pxHSxCoEsDfg5sQE/JSpZpu26zvA3gpMUCN2jwL6CZpdQpu4r4mm0r8QPO1+holEH/oryb2a5tOHzsUsZ4aD/vTbzsKqlHz6Rnge+xraspk8jN5EZ7D02aYznb7RSmBpzmdl03g3f5SWYKjoAv/BjHjUHGadbPwot9bf0k1nhjafkpOv39T0hSVfhHVHsxtiwfAQs2IGJIVKPmoPjFe3O7tTEftfTcUSm7p+9ZHdVp/fSU+DCX5wDb1GBx7qDcmX3O+ZjHHGTfYyPKPfEGFEeRgs/7DidV/bvOq6HzRRBqm9AqNTiJczGaBmz6E/wAzdkcV2uzFi0J9BH8NcSr5BDotHgOy85lCcQuP3G3gOa6sV1LUtSgwAAAABJRU5ErkJggg==","id":"nsd-app-nav-item-20675a8a-0400-4066-8b4d-90062663d001","text":"Reporting Analyst","type":"leaf"},{"a_attr":{"onclick":"window.location='../../agents/researcher/index.html';"},"data-nsd-label-uuid":"8604d0c1-1ed1-402f-8f6c-194fef922769","icon":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAADZElEQVR4Xp2Ua0wTWRiGuz+QQjTGIMqqu3iJBtF1lUotIoqSeEFRwAteaAEvZLsCa9hVfwiERBGMiYJGAiRiJIqApULXUjQaqbsKitYYkLB0lSYgM2V6Qal0aJXX6VSrncaIvsnz53znPPm+MyfD440itDxuDsD7gbv+XYEmxd+u2j5iPRMVwa19U2oeYXyu0hLwy/r8CVJJQnqQUOK3tcY0PvlCN5+794uhKIwjjPbsJq1N+5viLSRyG4S7yzAnOhsz1mRhc6UZcZcN9KZL1E7uWY/ozbZfCZNNpyOtKLprRWxhOyIPKhCReQ1hf8ggTK/G4rQqRJc8x8aLejVPkOrFdbjSZ0YgYbZTPdQw8osVWHlYhYi0ShzNFCMrKQ7+wduwMyEBpRkxmBlzFFEFLSMTgjaXcT2ukGZ7Xa/BhheEFbmFclYYW/gMUfHpWLY6BT+GJGNuuAQr1yRCmFnnEMIvaMtFroeNfoCexchGXhA0OnuG0NzWj5x6CsnXnHcYffIxwpmxV+U1Y8uVAeYOjfhdRqBNSw31mWypANyfU4+BTusmafzHyNq6LXjc9RpVDy1IqXMKY4u1WCg+h3VFHS5hxSMLmKnw0mhD4wOq5ar65WqXUEfSZ7t6h9DOyDSMrKVjADc1ZlTdN+PcLSO259Rjfnw+oqRlUHUM4Z/nNLpIGwiTHXeeGFGrJj5AlrDCrt435c90jEzrlNW2vma6e4ckuR3i2mHsklmxo+YNEqoH2Q7jK02IvWTAmduGz2RO5Hf61vIY2ckn/w9C2Uwicn8DBHuVmC5pxHSxCoEsDfg5sQE/JSpZpu26zvA3gpMUCN2jwL6CZpdQpu4r4mm0r8QPO1+holEH/oryb2a5tOHzsUsZ4aD/vTbzsKqlHz6Rnge+xraspk8jN5EZ7D02aYznb7RSmBpzmdl03g3f5SWYKjoAv/BjHjUHGadbPwot9bf0k1nhjafkpOv39T0hSVfhHVHsxtiwfAQs2IGJIVKPmoPjFe3O7tTEftfTcUSm7p+9ZHdVp/fSU+DCX5wDb1GBx7qDcmX3O+ZjHHGTfYyPKPfEGFEeRgs/7DidV/bvOq6HzRRBqm9AqNTiJczGaBmz6E/wAzdkcV2uzFi0J9BH8NcSr5BDotHgOy85lCcQuP3G3gOa6sV1LUtSgwAAAABJRU5ErkJggg==","id":"nsd-app-nav-item-904a59e9-a311-40f6-a753-052a348a0aaf","text":"Researcher","type":"leaf"}],"data-nsd-label-uuid":"7c44fa38-6647-4a41-a3c1-d258efc14cdc","icon":"https://crew-ai.models.nasdanika.org/images/software-agent.svg","id":"nsd-app-nav-item-ce6b1d9e-2167-4381-b419-5322dbe1e296","text":"Agents"},{"a_attr":{"onclick":"window.location='../../../tasks.html';"},"children":[{"a_attr":{"onclick":"window.location='../research-task/index.html';"},"data-nsd-label-uuid":"2db0d926-3963-40b0-8f28-aabde3ea713b","icon":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACk0lEQVR4XqWTX0hTURzH70uIj9kQosJKxXJCpuhSEQnSSktX4vy/zTVzGiZJBaMWaKi0rKFOq5mYmZGlksZMapmsVmGlZWRJNdc2sz9GD4VJXfh2z30YzNu1Kz184P7OPedzf+ec76V8fXwN4mAxLQ4R438IXhNM+yzxMVBEFh8ejdj1G5CWlIbI0ADkSHMQFh6KxPhEFOcXC0IpU2JtQCBNETuRxQSuQ/LmZEjCliNjRwbEkSFI2JTAWciHUlaAoNVBoPxF/ohmOiRINkpwqFTrqRdDRFgE/JYuA5WRJcfISyfLs1dTcM/8Zp5dnjGh2J46kbpLDkqh0mDqK+3FwOAwIqNiYLGOYsvWFPYjWl0VchWFMJ5rR3aeCncfjHmteeumkZmj+buQQMYvXunDipWr0H1jEKbWTkjTs1BRfRopqemc+f8UVunrUXPSiI5r/aitM+FYpZ7t8HxbF3QVJ9A3cH9h4bh9BmbLI9ievGbrxy8cbC2E4ed2rlBeoMGR4y2IjkuG89McrvdbUc10yIfecBYGYwtL700rV5in2IueW5NI2qmC4+NPtLR3o2hfOS91Ta0Lb9l8+yF7k6fqmznnKQSOsNF0iTl0DfYUlbExIbdK3gmhqbmDFdbWd054hPnMGdrGaEizyuCYnkXb5V7sL9fyYjS1czrUVZ5xeYSlB7TYnVkMSVwiXF9+wf7hB3vzfLxzf+cIvbY88f4bLPdGMTw2ydbkNyS1EEbGXVyhQlWCg0cbERW7Dc7Pc+gxD6Fa38ALCX1NbSNLV98drjBPUQTz0DS2SwuZ2Myi+cJVKNUlvMxPg0eYK1fTZIAEufywjgltg9dEobxx0UiXqWlKJBIZiHR+FBaLLFtN+/mJDH8A8aZGAjyJmOsAAAAASUVORK5CYII=","id":"nsd-app-nav-item-e128b986-754d-4099-95d0-4fe946f8b04c","text":"Research","type":"leaf"},{"data-nsd-label-uuid":"dbd9b826-9cbe-43e8-b978-b6a24b31173e","icon":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAUCAYAAABvVQZ0AAACr0lEQVR4XqWUS0hUYRTHtZYtKogWUbQp6Cl6Z8ZCDct8pNhDanqglumd+78zPsZ8PyYzHQrtofTELColy1IsJlA3Ri2KHtAmrEXQskWbFrox6Ot/Rm7pMDpFBw53vo/z/e7/+59zJyoqTMSY5vK4wpIVkdJmGItDz84KzWVm2IBzdsM8ESltLvTFFhQsCWX8DsJyNd2zPq0Wr49fwZSVB9sw5XC5UmfW8qXmFl1fOXNvVliw9Hq8xw0oK3MvQonqmbVzwsSnmPz8RZk+fN5Rhcf0Y5nD41llN81NAqGqjVHNzQukNhZYK8+wMDFz/xl8z+/EZMMgVE0/VF4HJrNP4SMhCfSnhPB08YfPYzYDH+aESVfEl8KrUGV3ocxuKG8PVI7fGNd09zYa7Q0mgQQ3Umn2nLCd1XhW2QdVdR+q69106tehqh/gZ3IFLgSLeEWCajQgjzaMJpWjMywssxFf5Gr1A39gRheUbwgqpQaDArAZZnewOUWeNZ5bUM42vA0L2+x2Ly26hin6pJqeQNU+nIYdOItP0ghesdXuMg9LR7dXYmxeWFxR8eoj5/HDfRNKrltxD0oO7G3BV/GpvBcqoRRjvLbKOhkBFgQCdpmvfa34llaHV1xvkBGwA2nNAajEsn+AWUF/DAFbaypzp9YhYDPRn1KNQLwH/WxKgEofaYbhnx9GkzlbsXtOm28OtRvjkrt8aOdeMsHrNN1MkeTaEVkZYZz6ePHP6iy9G2ETmkQ1r52V5IWPe0MJZeiMCKMCLdGL5xkNxoDk1mJcImg3lZRy+p+yy8GxyfFD2Q0MyhcUygkGQUkyUyxqD0161OMAWi+/nFbc8UJgZiPr7zidzoWhLCuiwyVhbVR32z+MCYGxyxPyYmbLrNN/GdFUrtO3Uf5FDVPlCH8flf3Qwv+OX3aGnke5hbRQAAAAAElFTkSuQmCC","state":{"selected":true},"id":"nsd_g8","text":"Reporting","type":"leaf"}],"data-nsd-label-uuid":"df036181-9375-4f97-a48f-82182683e02d","icon":"https://crew-ai.models.nasdanika.org/images/project-management.svg","id":"nsd-app-nav-item-511773aa-6ad3-4201-8753-33a4a237b8f6","text":"Tasks"},{"a_attr":{"onclick":"window.location='../../../tools.html';"},"children":[{"a_attr":{"onclick":"window.location='../../tools/serper/index.html';"},"data-nsd-label-uuid":"ecf49b91-e571-454b-b1f3-f08ec77a325e","icon":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAC6klEQVR4Xo2VTUwTURDHt25LQmxpU9oGjGdQYiRSpGDKblsggRbtF3Lw4F1Fg1QPRhNUVPRiSPmQeNDEj4gXgVbUBBNAQKBQIERjbPDjbkSKTQxqMs6s2aUsa+M/mWbfzsxv570375VhGGanyWR6y7JsGJ+NzP+pKCcnJ8LxjpRarf6K4zzJQ7AXwy/hYd9jsFpLyWmTnMoqOmC3r76emQV/IPgTx/5NXqysk2ALS28gOvQc8FXHpgCZDAZDdGYuDsdONFFso8y9g35yqTKCEdTr89NXg7JAUSpXVVUq8eETXLzcRkB3mq9BrdF8EQflaB0Em51fhEM+37+gLO90rROQppyVlTWF7zxoRxoON/6q5LikPCEoQr1boSwC7nXf6gUCkk3F5uBS2xVoOnkKJqdjoNPp+tPiJSlBJdjYxCQcx/UToSLYVlHxDeN2yViSJOjV9hufs7OzH4gwnBaMT05BZ3cP8A7HD4fTuYYtNMBkgIkKXkOYzx8AATZOMF6Ahbu6af3uYAwrT8okVqkygmk0mmH0b5MnZNLGmgmVbcDKa/Oh0Gqgtd0rT1KSipFtQPo0CdYesUExl/sb40JoXlm+pN14AiIuV1WKdzrXlaZZXvcXdj1qgwv3S+Do+QIorTZTpYEtMI7nV2PxeXiXWBaMWoFaI33NaJpUGcGabu6Bc3f3Qftg2VYoXg6D1B7Np1tApVINkDW3hARouKtH3E3agGK0EFVGsIISvTLU7fGkRsbGQavVPhE/gs/9I68mhD5jNreG14rJBJFD6T1DZ9tTf/D7KCZrtTpqTkF4hAZHcXcdTtdaGkxUQA5t7bPC/po8MJnNCcZisQzEF5eg5cxZwMsyivY0hM/Ts3HQ6/WKZ5NJg7Y+skJZTT50hDuB4/h1chZWV9esEPT98kfBYvEFsNsrV8gnA6VLgBKsp/c2RIaewXadLiI6C00mS7/bU5+srXMnjUYjrWcmmCi32WxJ0JVGfwk4tvwBUNPNSh4I2+MAAAAASUVORK5CYII=","id":"nsd-app-nav-item-517a1853-4671-49c2-ad37-c0df8298e082","text":"Serper","type":"leaf"}],"data-nsd-label-uuid":"a0baf85d-ae1c-49dc-b884-d04fbebab12e","icon":"https://crew-ai.models.nasdanika.org/images/toolbox.svg","id":"nsd-app-nav-item-ab05489b-ba9f-42d7-bfe7-24d599c779f9","text":"Tools"}]},"search":{"show_only_matches":true,"show_only_matches_children":true},"types":{"leaf":{"icon":"jstree-file"}},"plugins":["state","type","search"],"state":{"key":"5ae9b536-e544-4aeb-baf9-3cbe62c1a364-navigation-panel"}}));
+// Tokens: searchInputSelector, timer, treeSelector
+$('#5ae9b536-e544-4aeb-baf9-3cbe62c1a364-navigation-panel_searchInput').keyup(function () {
+    if (window['nsd_jstTreeSearchTimer_nsd_gc']) { 
+		clearTimeout(window['nsd_jstTreeSearchTimer_nsd_gc']); 
+	}
+    window['nsd_jstTreeSearchTimer_nsd_gc'] = setTimeout(function () {
+      var v = $('#5ae9b536-e544-4aeb-baf9-3cbe62c1a364-navigation-panel_searchInput').val();
+      $('#5ae9b536-e544-4aeb-baf9-3cbe62c1a364-navigation-panel').jstree(true).search(v);
+    }, 250);
+  });
+
+});</script>
+        </div>
+        <div data-nsd-label-uuid="dbd9b826-9cbe-43e8-b978-b6a24b31173e" data-nsd-action-uris="uuid:dbd9b826-9cbe-43e8-b978-b6a24b31173e" class="col nsd-app-content-panel">
+          <div class="container-fluid">
+            <div class="row nsd-app-content-panel-breadcrumb-row">
+              <div class="col">
+                <nav aria-label="breadcrumb" class="nsd-app-content-panel-breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a href="../../../tasks.html" data-nsd-label-uuid="df036181-9375-4f97-a48f-82182683e02d">
+                        <img src="https://crew-ai.models.nasdanika.org/images/project-management.svg" class="nsd-app-label-icon"/>Tasks</a>
+                    </li>
+                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="dbd9b826-9cbe-43e8-b978-b6a24b31173e"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAUCAYAAABvVQZ0AAACr0lEQVR4XqWUS0hUYRTHtZYtKogWUbQp6Cl6Z8ZCDct8pNhDanqglumd+78zPsZ8PyYzHQrtofTELColy1IsJlA3Ri2KHtAmrEXQskWbFrox6Ot/Rm7pMDpFBw53vo/z/e7/+59zJyoqTMSY5vK4wpIVkdJmGItDz84KzWVm2IBzdsM8ESltLvTFFhQsCWX8DsJyNd2zPq0Wr49fwZSVB9sw5XC5UmfW8qXmFl1fOXNvVliw9Hq8xw0oK3MvQonqmbVzwsSnmPz8RZk+fN5Rhcf0Y5nD41llN81NAqGqjVHNzQukNhZYK8+wMDFz/xl8z+/EZMMgVE0/VF4HJrNP4SMhCfSnhPB08YfPYzYDH+aESVfEl8KrUGV3ocxuKG8PVI7fGNd09zYa7Q0mgQQ3Umn2nLCd1XhW2QdVdR+q69106tehqh/gZ3IFLgSLeEWCajQgjzaMJpWjMywssxFf5Gr1A39gRheUbwgqpQaDArAZZnewOUWeNZ5bUM42vA0L2+x2Ly26hin6pJqeQNU+nIYdOItP0ghesdXuMg9LR7dXYmxeWFxR8eoj5/HDfRNKrltxD0oO7G3BV/GpvBcqoRRjvLbKOhkBFgQCdpmvfa34llaHV1xvkBGwA2nNAajEsn+AWUF/DAFbaypzp9YhYDPRn1KNQLwH/WxKgEofaYbhnx9GkzlbsXtOm28OtRvjkrt8aOdeMsHrNN1MkeTaEVkZYZz6ePHP6iy9G2ETmkQ1r52V5IWPe0MJZeiMCKMCLdGL5xkNxoDk1mJcImg3lZRy+p+yy8GxyfFD2Q0MyhcUygkGQUkyUyxqD0161OMAWi+/nFbc8UJgZiPr7zidzoWhLCuiwyVhbVR32z+MCYGxyxPyYmbLrNN/GdFUrtO3Uf5FDVPlCH8flf3Qwv+OX3aGnke5hbRQAAAAAElFTkSuQmCC" class="nsd-app-label-icon"/>Reporting</span>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            <div class="row nsd-app-content-panel-title-and-items-row">
+              <div class="col-auto">
+                <H1><span data-nsd-label-uuid="dbd9b826-9cbe-43e8-b978-b6a24b31173e" class="nsd-app-content-panel-title"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAUCAYAAABvVQZ0AAACr0lEQVR4XqWUS0hUYRTHtZYtKogWUbQp6Cl6Z8ZCDct8pNhDanqglumd+78zPsZ8PyYzHQrtofTELColy1IsJlA3Ri2KHtAmrEXQskWbFrox6Ot/Rm7pMDpFBw53vo/z/e7/+59zJyoqTMSY5vK4wpIVkdJmGItDz84KzWVm2IBzdsM8ESltLvTFFhQsCWX8DsJyNd2zPq0Wr49fwZSVB9sw5XC5UmfW8qXmFl1fOXNvVliw9Hq8xw0oK3MvQonqmbVzwsSnmPz8RZk+fN5Rhcf0Y5nD41llN81NAqGqjVHNzQukNhZYK8+wMDFz/xl8z+/EZMMgVE0/VF4HJrNP4SMhCfSnhPB08YfPYzYDH+aESVfEl8KrUGV3ocxuKG8PVI7fGNd09zYa7Q0mgQQ3Umn2nLCd1XhW2QdVdR+q69106tehqh/gZ3IFLgSLeEWCajQgjzaMJpWjMywssxFf5Gr1A39gRheUbwgqpQaDArAZZnewOUWeNZ5bUM42vA0L2+x2Ly26hin6pJqeQNU+nIYdOItP0ghesdXuMg9LR7dXYmxeWFxR8eoj5/HDfRNKrltxD0oO7G3BV/GpvBcqoRRjvLbKOhkBFgQCdpmvfa34llaHV1xvkBGwA2nNAajEsn+AWUF/DAFbaypzp9YhYDPRn1KNQLwH/WxKgEofaYbhnx9GkzlbsXtOm28OtRvjkrt8aOdeMsHrNN1MkeTaEVkZYZz6ePHP6iy9G2ETmkQ1r52V5IWPe0MJZeiMCKMCLdGL5xkNxoDk1mJcImg3lZRy+p+yy8GxyfFD2Q0MyhcUygkGQUkyUyxqD0161OMAWi+/nFbc8UJgZiPr7zidzoWhLCuiwyVhbVR32z+MCYGxyxPyYmbLrNN/GdFUrtO3Uf5FDVPlCH8flf3Qwv+OX3aGnke5hbRQAAAAAElFTkSuQmCC" class="nsd-app-label-icon"/>Reporting<a href="https://crew-ai.models.nasdanika.org/references/eClassifiers/Task/index.html" title="A specific assignment completed by an Agent" style="vertical-align:super;font-size:x-small;margin-left:0.2em"><span class="far fa-question-circle nsd-app-label-icon"></span></a></span>
+                </H1>
+              </div>
+            </div>
+            <div class="row nsd-app-content-panel-content-row">
+              <div class="col">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col"><div class="markdown-body"><p>This task demonstrates use of a custom icon.</p>
+<p>The connection to the <a href="../../agents/reporting-analyst/index.html">Reporting analyst agent</a> associates the agent with the task by <a href="https://docs.nasdanika.org/core/mapping/index.html#source">mapping</a> it to the task <a href="https://crew-ai.models.nasdanika.org/references/eClassifiers/Task/references/eStructuralFeatures/agent/index.html">agent</a> reference:</p>
+<pre><code class="language-yaml">features:
+  source: agent
+</code></pre>
+<p>The connection from the <a href="../research-task/index.html">Research task</a> associates the agent with the task by mapping it to the task <a href="https://crew-ai.models.nasdanika.org/references/eClassifiers/Task/references/eStructuralFeatures/context/index.html">context</a> reference:</p>
+<pre><code class="language-yaml">features:
+  target: context
+</code></pre>
+</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nsd-app-footer">
+          <ul class="nav nsd-app-footer-navs">
+            <li class="nav-item">
+              <a href="https://github.com/Nasdanika-Demos/latest-ai-development" data-nsd-label-uuid="d82b6149-4e01-4337-a0ba-a731f020320a" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Source</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

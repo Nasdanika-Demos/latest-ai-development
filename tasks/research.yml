@@ -5,3 +5,4 @@ features:
       tasks:
         path: 2
         comparator: down-right
+doc-ref: tasks/research.md

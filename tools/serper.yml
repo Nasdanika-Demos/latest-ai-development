@@ -6,3 +6,8 @@ features:
         path: 2
         comparator: down-right
 documentation: The [SerperDevTool](https://docs.crewai.com/tools/serperdevtool) is designed to search the internet and return the most relevant results.
+configuration:
+  code: SerperDevTool()
+  imports: |
+    module: crewai_tools
+    item: SerperDevTool

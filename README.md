@@ -28,3 +28,12 @@ Loads a model, generates an [HTML application](https://html-app.models.nasdanika
 with the [html-app](https://docs.nasdanika.org/nsd-cli/nsd/model/html-app/index.html) command
 and then generates this web site from it with the [site](https://docs.nasdanika.org/nsd-cli/nsd/model/html-app/site/index.html) command.
 
+### Generate sources and configuration
+
+```
+nsd model latest-ai-development.drawio crew-ai target/crew.py 
+```
+
+Loads a model, generates a crew class and configuration files for agents and tasks
+with the [crew-ai](https://docs.nasdanika.org/nsd-cli/nsd/model/crew-ai/index.html) command.
+

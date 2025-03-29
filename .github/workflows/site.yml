@@ -34,8 +34,6 @@ jobs:
         # run: wget https://github.com/Nasdanika/cli/releases/download/maven-2025.3.0/nsd-cli.zip
       - name: Unzip Nasdanika CLI
         run: unzip nsd-cli.zip
-      - name: Setup Graphviz
-        uses: ts-graphviz/setup-graphviz@v2
       - name: Generate sources and site
         working-directory: nsd-cli
         run: |

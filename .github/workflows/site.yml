@@ -39,6 +39,8 @@ jobs:
         run: |
           chmod u+x nsd
           pwd
+          ./nsd model ../latest-ai-development.drawio crew-ai target/sources
+          zip ../docs/sources.zip ../target/sources
           ./nsd model ../latest-ai-development.drawio html-app -r ../root-action.yml site -r=-1 -F ../page-template.yml ../docs
           ls ../docs
       - name: Upload artifact

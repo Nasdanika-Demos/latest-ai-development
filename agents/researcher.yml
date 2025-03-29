@@ -6,15 +6,12 @@ features:
         path: 2
         comparator: down-right
 configuration:
+  backstory: ${tooltip}
   configuration: |
     role: >
       {topic} Senior Data Researcher
     goal: >
       Uncover cutting-edge developments in {topic}
-    backstory: >
-      You're a seasoned researcher with a knack for uncovering the latest
-      developments in {topic}. Known for your ability to find the most relevant
-      information and present it in a clear and concise manner.			
 documentation: |
   This is an example of in-line documentation
 

@@ -8,6 +8,6 @@ features:
 documentation: The [SerperDevTool](https://docs.crewai.com/tools/serperdevtool) is designed to search the internet and return the most relevant results.
 configuration:
   code: SerperDevTool()
-  imports: |
+  imports: |+2
     module: crewai_tools
     item: SerperDevTool

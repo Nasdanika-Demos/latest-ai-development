@@ -19,8 +19,7 @@ and saves to a file with the chained [save](https://docs.nasdanika.org/nsd-cli/n
 ### Generate documentation site
 
 ```
-nsd model latest-ai-development.drawio 
-html-app -r root-action.yml 
+nsd model latest-ai-development.drawio html-app -r root-action.yml \
 site -r=-1 -F page-template.yml docs
 ```
 

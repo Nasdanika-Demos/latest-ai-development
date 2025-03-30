@@ -40,8 +40,8 @@ jobs:
           chmod u+x nsd
           pwd
           ./nsd model ../latest-ai-development.drawio html-app -r ../root-action.yml site -r=-1 -F ../page-template.yml ../docs
-          ./nsd model ../latest-ai-development.drawio crew-ai sources
-          zip ../docs/sources.zip sources
+          ./nsd model ../latest-ai-development.drawio crew-ai src/crew.py
+          zip ../docs/src.zip src
           ls ../docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
